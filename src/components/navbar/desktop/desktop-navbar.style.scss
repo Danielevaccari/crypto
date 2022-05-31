@@ -1,0 +1,35 @@
+.crypto-desktop-navbar-container {
+  height          : 70px;
+  width           : 100vw;
+  background-color: $main-color;
+  display         : flex;
+  border          : .5px solid;
+  border-color    : $border-color;
+  position        : fixed;
+
+  .crypto-desktop-navbar-left {
+    flex           : 10%;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+    .crypto-desktop-navbar-icon {
+      height: min(40px, 90%);
+      width : min(40px, 90%);
+    }
+  }
+
+  .crypto-desktop-navbar-middle {
+    flex: 45%;
+  }
+
+  .crypto-desktop-navbar-right {
+    flex: 45%;
+  }
+}
+
+@media (max-width: $tablet) {
+  .crypto-desktop-navbar-container {
+    display: none;
+  }
+}

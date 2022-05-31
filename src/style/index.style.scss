@@ -1,0 +1,22 @@
+// Global variables
+@import './color/colors.style.scss';
+@import './fonts/fonts.style.scss';
+@import './breakpoints/constanst.style.scss';
+
+// Files
+@import '../components/coins-data-display/crypto-display.style.scss';
+@import '../components/coins-data-display/coinlist/crypto-coinlist.style.scss';
+@import '../components/coins-data-display/coinlist/coinlistitem/coinlist-item.style.scss';
+@import '../components/specific-coinpage/coinpage/coinpage.style.scss';
+@import '../components/navbar/desktop/desktop-navbar.style.scss';
+@import '../components/navbar/desktop/desktop-sidebar/desktop-sidebar.style.scss';
+
+*,
+*::after,
+*::before {
+  box-sizing    : border-box;
+  padding       : 0;
+  margin        : 0;
+  font-family   : $main-font;
+  text-rendering: geometricPrecision;
+}

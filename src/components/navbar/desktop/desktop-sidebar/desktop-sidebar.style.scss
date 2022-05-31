@@ -1,0 +1,17 @@
+.crypto-desktop-sidebar-container {
+  display         : flex;
+  position        : fixed;
+  height          : calc(100vh - 70px);
+  left            : 0;
+  bottom          : 0;
+  width           : 185px;
+  background-color: $main-color;
+  border          : .5px solid;
+  border-color    : $border-color;
+}
+
+@media (max-width: $tablet) {
+  .crypto-desktop-sidebar-container {
+    display: none;
+  }
+}

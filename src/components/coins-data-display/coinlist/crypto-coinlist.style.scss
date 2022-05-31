@@ -1,0 +1,25 @@
+.coin-item-container {
+  display         : flex;
+  height          : 80px;
+  width           : 700px;
+  border-left     : 1px solid;
+  border-bottom   : 1px solid;
+  border-right    : 1px solid;
+  border-color    : $border-color;
+  color           : white;
+  background-color: $main-color;
+}
+
+@media (max-width: $tablet) {
+  .coin-item-container {
+    font-size: 10px;
+    height   : 65px;
+    width    : 100vw;
+  }
+}
+
+@media (max-width: $tablet) {
+  .coin-item-container {
+    width: 100vw;
+  }
+}

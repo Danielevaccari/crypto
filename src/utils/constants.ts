@@ -1,0 +1,2 @@
+export const PATH_TOP_100_CRYPTO = `${process.env.COINGECKO_API_URL}/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
+export const PATH_SPECIFIC_CRYPTO_DATA_BY_ID = `${process.env.COINGECKO_API_URL}/coins/`;
