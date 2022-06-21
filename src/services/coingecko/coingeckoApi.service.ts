@@ -1,7 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
 import { PATH_TOP_100_CRYPTO } from '../../utils/constants';
 import { PATH_SPECIFIC_CRYPTO_DATA_BY_ID } from '../../utils/constants';
-import { Coin } from '../../models/coin.interface';
+import { ICoin } from '../../models/coin.interface';
+import { ICryptoCoin } from '../../interfaces/interfaces';
 
 const instance = axios.create({
   baseURL: process.env.COINGECKO_API_URL,
@@ -18,11 +19,11 @@ const requests = {
 };
 
 export const CoinAPI = {
-  getCoins(): Promise<Coin[]> {
+  getCoins(): Promise<ICoin[]> {
     return requests.get(PATH_TOP_100_CRYPTO);
   },
 
-  getSpecificCoin(coinID: string | undefined) {
+  getSpecificCoin(coinID: string): Promise<ICryptoCoin> {
     return requests.get(PATH_SPECIFIC_CRYPTO_DATA_BY_ID + coinID);
   },
 };

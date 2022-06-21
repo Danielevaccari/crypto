@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Coin } from '../../../../models/coin.interface';
+import { ICoin } from '../../../../models/coin.interface';
 import { numberFormatter } from '../../../../utils/numberFormat.util';
 
 interface Props {
-  coin: Coin
+  coin: ICoin
 }
 
 const CoinlistItem: React.FC<Props> = ({ coin }) => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import CoinlistItem from './coinlistitem/CoinlistItem.component';
-import { Coin } from '../../../models/coin.interface';
+import { ICoin } from '../../../models/coin.interface';
 
 interface Props {
-  coinData: Array<Coin>
+  coinData: Array<ICoin>
 }
 
 const Coinlist: React.FC<Props> = ({ coinData }) => {
