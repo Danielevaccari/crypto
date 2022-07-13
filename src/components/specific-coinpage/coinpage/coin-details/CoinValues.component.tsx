@@ -12,7 +12,6 @@ const CoinDetails: React.FC<Props> = ({ coinId }) => {
     if (coinId) {
       CoinAPI.getSpecificCoin(coinId).then((coin) => {
         setCryptoCoin(coin);
-        console.log(coin);
       });
     }
   }, []);
