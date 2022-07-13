@@ -24,9 +24,7 @@ const CoinDetails: React.FC<Props> = ({ coinId }) => {
         {' '}
         {cryptoCoin?.market_data.current_price.eur}
       </div>
-      <div className='coinpage-coin-info'>
-        {cryptoCoin?.description['en']}
-      </div>
+      <div className='coinpage-coin-info' dangerouslySetInnerHTML={{ __html: cryptoCoin?.description['en'] || "" }} />
     </div>
   );
 };
