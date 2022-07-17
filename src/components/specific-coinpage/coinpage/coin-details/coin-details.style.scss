@@ -1,9 +1,25 @@
 .coinpage-coin-values{
   display: flex;
+  flex-direction: column;
   .coinpage-coin-header{
-    flex: 1;
+    flex: 0.2;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    min-height: 120px;
+
+    .coinpage-coin-header-left{
+      flex: .1;
+    }
+    .coinpage-coin-header-middle{
+      flex: .4;
+    }
+    .coinpage-coin-header-right{
+      flex: .4;
+    }
   }
   .coinpage-coin-info{
-    flex: 1;
+    border-top: .5px solid $border-color;
+    padding: 5%;
   }
 }

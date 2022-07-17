@@ -14,20 +14,27 @@ const CoinDetails: React.FC<Props> = ({ coinId }) => {
         setCryptoCoin(coin);
       });
     }
-
   }, []);
 
   return (
-    <div className='coinpage-coin-values'>
-      <div className='coinpage-coin-header'>
-        {cryptoCoin?.name}
-        {' '}
-        {cryptoCoin?.market_data.current_price.eur}
+    <>
+      <div className='coinpage-coin-values'>
+        <div className='coinpage-coin-header'>
+          <div className='coinpage-coin-header-left'>
+            <img src={cryptoCoin?.image.large} alt='coin-img' style={{ height: '50px', width: '50p', boxShadow: '0px 0px 5px #c8d6e5', borderRadius: '50%' }}></img>
+          </div>
+          <div className='coinpage-coin-header-middle'>
+            {cryptoCoin?.name}
+          </div>
+          <div className='coinpage-coin-header-right'>
+            {cryptoCoin?.market_data.current_price.eur}
+          </div>
+        </div>
+        <div className='coinpage-coin-info'>
+          {cryptoCoin?.description['en']}
+        </div>
       </div>
-      <div className='coinpage-coin-info'>
-        {cryptoCoin?.description['en']}
-      </div>
-    </div>
+    </>
   );
 };
 
