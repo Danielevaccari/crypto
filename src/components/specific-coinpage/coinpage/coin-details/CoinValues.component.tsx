@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { ICryptoCoin } from '../../../../interfaces/interfaces';
 import { CoinAPI } from '../../../../services/coingecko/coingeckoApi.service';
 
+const DOMPurify = require('dompurify')(window);
+
 interface Props {
   coinId: string | undefined
 }
@@ -30,9 +32,7 @@ const CoinDetails: React.FC<Props> = ({ coinId }) => {
             {cryptoCoin?.market_data.current_price.eur}
           </div>
         </div>
-        <div className='coinpage-coin-info'>
-          {cryptoCoin?.description['en']}
-        </div>
+        <div className='coinpage-coin-info' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(cryptoCoin?.description['en']) }} />
       </div>
     </>
   );
