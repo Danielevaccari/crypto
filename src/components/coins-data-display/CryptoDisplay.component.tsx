@@ -1,28 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import * as React from 'react';
 import Coinlist from './coinlist/Coinlist.component';
 import { CoinAPI } from '../../services/coingecko/coingeckoApi.service';
 import { ICoin } from '../../models/coin.interface';
+import { Column } from '../../utils/enums';
 import { TiSortAlphabetically } from 'react-icons/ti'
 import { FaMoneyBillAlt } from 'react-icons/fa';
 import { BsGraphUp } from 'react-icons/bs';
 import { GrMoney } from 'react-icons/gr';
 import { IconContext } from "react-icons";
 
-const enum Column {
-  Name,
-  Price,
-  MarketChange,
-  MarketCap
-}
-
 const CryptoDisplay: React.FC = () => {
-  const [coins, setcoins] = useState<Array<ICoin>>([]);
-  const [filteredcoins, setfilteredcoins] = useState<Array<ICoin>>([]);
-  const [column, setcolumn] = useState<Column>(Column.MarketCap);
-  const [loading, setloading]: [boolean, (loading: boolean) => void] = useState<boolean>(true);
-  const [error, seterror]: [string, (error: string) => void] = useState('');
+  const [coins, setcoins] = React.useState<Array<ICoin>>([]);
+  const [filteredcoins, setfilteredcoins] = React.useState<Array<ICoin>>([]);
+  const [column, setcolumn] = React.useState<Column>(Column.MarketCap);
+  const [loading, setloading]: [boolean, (loading: boolean) => void] = React.useState<boolean>(true);
+  const [error, seterror]: [string, (error: string) => void] = React.useState('');
 
-  useEffect(() => {
+  React.useEffect(() => {
     // Fetch coindata and set to state
     CoinAPI.getCoins().then(data => {
       setcoins(data);
@@ -30,30 +24,28 @@ const CryptoDisplay: React.FC = () => {
     });
   }, []);
 
-  // if coins array changes, update filteredcoins
-  useEffect(() => {
-    setfilteredcoins(coins);
-  }, [coins])
-
   // compares coins to the search input and sets the result to filteredcoins
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const lowerCase = event.target.value.toLowerCase();
     const searchedCoins = coins.filter(coin => coin.name.toLowerCase().includes(lowerCase));
-    sortByColumn(column, searchedCoins);
 
     setfilteredcoins(searchedCoins);
   };
 
   const handleColumn = (event: React.MouseEvent<HTMLButtonElement>, clickedColumn: Column): void => {
     let filteredcoinsCopy = [...filteredcoins];
+    let coinsCopy = [...coins];
 
     if (column === clickedColumn) {
       filteredcoinsCopy.reverse();
+      coinsCopy.reverse();
     } else {
       sortByColumn(clickedColumn, filteredcoinsCopy);
+      sortByColumn(clickedColumn, coinsCopy);
     }
 
     setfilteredcoins(filteredcoinsCopy);
+    setcoins(coinsCopy);
     setcolumn(clickedColumn);
   };
 
@@ -86,30 +78,24 @@ const CryptoDisplay: React.FC = () => {
     <div className='coinlist-wrapper'>
       <input className='searchbar' onChange={handleSearch} placeholder="Search for a coin..." ></input>
       <div id="column-div" className='column-buttons'>
-        <button className={"column-button" + (column === Column.Name ? "-active" : "")} onClick={(e) => handleColumn(e, Column.Name)} >
-          <IconContext.Provider value={{ size: "1.5em" }}>
+        <IconContext.Provider value={{ size: "1.5em" }}>
+          <button className={"column-button" + (column === Column.Name ? "-active" : "")} onClick={(e) => handleColumn(e, Column.Name)} >
             <TiSortAlphabetically />
-          </IconContext.Provider>
-          <h4>Name</h4>
-        </button>
-        <button className={"column-button" + (column === Column.Price ? "-active" : "")} onClick={(e) => handleColumn(e, Column.Price)} >
-          <IconContext.Provider value={{ size: "1.5em" }}>
+            <h4>Name</h4>
+          </button>
+          <button className={"column-button" + (column === Column.Price ? "-active" : "")} onClick={(e) => handleColumn(e, Column.Price)} >
             <FaMoneyBillAlt />
-          </IconContext.Provider>
-          <h4>Current Price</h4>
-        </button>
-        <button className={"column-button" + (column === Column.MarketChange ? "-active" : "")} onClick={(e) => handleColumn(e, Column.MarketChange)} >
-          <IconContext.Provider value={{ size: "1.5em" }}>
+            <h4>Current Price</h4>
+          </button>
+          <button className={"column-button" + (column === Column.MarketChange ? "-active" : "")} onClick={(e) => handleColumn(e, Column.MarketChange)} >
             <BsGraphUp />
-          </IconContext.Provider>
-          <h4>Market Cap Change</h4>
-        </button>
-        <button className={"column-button" + (column === Column.MarketCap ? "-active" : "")} onClick={(e) => handleColumn(e, Column.MarketCap)} >
-          <IconContext.Provider value={{ size: "1.5em" }}>
+            <h4>Market Cap Change</h4>
+          </button>
+          <button className={"column-button" + (column === Column.MarketCap ? "-active" : "")} onClick={(e) => handleColumn(e, Column.MarketCap)} >
             <GrMoney />
-          </IconContext.Provider>
-          <h4>Market Cap</h4>
-        </button>
+            <h4>Market Cap</h4>
+          </button>
+        </IconContext.Provider>
       </div>
       {loading && <Coinlist coinData={filteredcoins} />}
     </div>
