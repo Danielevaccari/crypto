@@ -9,7 +9,7 @@
 @import '../components/coins-data-display/coinlist/coinlistitem/coinlist-item.style.scss';
 @import '../components/specific-coinpage/coinpage/coinpage.style.scss';
 @import '../components/navbar/desktop/desktop-navbar.style.scss';
-@import '../components/navbar/desktop/desktop-sidebar/desktop-sidebar.style.scss';
+@import '../components/navbar/desktop/desktop-mainpage-infobar/desktop-mainpage-infobar.style.scss';
 @import '../components/specific-coinpage/coinpage/coin-details/coin-details.style.scss';
 
 *,
@@ -20,4 +20,15 @@
   margin        : 0;
   font-family   : $main-font;
   text-rendering: geometricPrecision;
+}
+
+html {  
+  /* hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hide scrollbar for chrome, safari and opera */
+html::-webkit-scrollbar {
+  display: none;
 }

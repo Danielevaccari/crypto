@@ -1,0 +1,13 @@
+.crypto-desktop-mainpage-infobar-container {
+  display         : flex;
+  height          : 500px;
+  width           : 100%;
+  background      : linear-gradient(135deg, #171e2c 30%, #14636f 100%);
+  color           : white;
+}
+
+@media (max-width: $tablet) {
+  .crypto-desktop-mainpage-infobar-container {
+    display: none;
+  }
+}
