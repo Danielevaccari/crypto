@@ -1,7 +1,7 @@
 import React from 'react';
 import navbarIcon from '../../../media/navbariconcoin.svg';
 import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
@@ -78,13 +78,13 @@ export const NavbarDesktop = () => {
       </div>
 
       <div className='crypto-desktop-navbar-middle'>
-        Middle
+
       </div>
       <div className='crypto-desktop-navbar-right'>
 
         <Stack direction="row" spacing={2}>
-          <IconButton aria-label="delete">
-            <DeleteIcon />
+          <IconButton aria-label="Light mode" color="inherit">
+            <LightModeIcon />
           </IconButton>
           <TextButton disableRipple>
               Support
