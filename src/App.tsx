@@ -12,15 +12,22 @@ import Stack from '@mui/material/Stack';
 const App: React.FC = () => {
   return (
     <>
-      <Router>
-        <Stack>
-          <NavbarDesktop />
-          <MainpageInfobarDesktop />          
-          <Routes>
-            <Route path='/' element={<CryptoDisplay />} />
-            <Route path='coins/:coinId' element={<Coinpage />} />
-          </Routes>         
-        </Stack>
+      <Router>        
+        <Routes>
+          <Route path='/' element={
+            <Stack>
+              <NavbarDesktop />
+              <MainpageInfobarDesktop /> 
+              <CryptoDisplay />
+            </Stack>
+          } />
+          <Route path='coins/:coinId' element={
+            <Stack>              
+              <NavbarDesktop />
+              <Coinpage />
+            </Stack>
+          } />
+        </Routes>
       </Router>
     </>
   );
