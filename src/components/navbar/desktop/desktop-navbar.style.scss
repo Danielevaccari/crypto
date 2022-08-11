@@ -1,5 +1,5 @@
 .crypto-desktop-navbar-container {
-  width           : 100%;
+  width           : 100vw;
   height          : auto;
   background-color: $main-color;
   display         : flex;
@@ -25,12 +25,64 @@
   }
 
   .crypto-desktop-navbar-right {
-    color         : white;
+    color           : white;
+
+    
   }
+}
+
+.crypto-desktop-register-button {
+  height: 2rem !important;
+  text-transform: none !important;
+  font-size: .9rem !important;
+  margin: 6px 12px 6px 12px !important;
+  border: 1px solid !important;
+  line-height: 1 !important;
+  font-weight: 400 !important;
+  background-color: #047bf8 !important;
+  border-color: #047bf8 !important;
+  font-family: 
+    Proxima,
+    Nova,
+    W01,
+    Roboto,
+    Rubik,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif !important;
+}
+
+.crypto-desktop-text-button {
+  text-transform: none !important;
+  font-size: .9rem !important;
+  padding: 6px 12px !important;
+  border: 0px !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+  color: white !important;
+  background-color: none !important;
+  border-color: none !important;
+  font-family: 
+    Proxima,
+    Nova,
+    W01,
+    Roboto,
+    Rubik,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif !important;
 }
 
 @media (max-width: $tablet) {
   .crypto-desktop-navbar-container {
-    display: none;
+    display: flex;
   }
 }
