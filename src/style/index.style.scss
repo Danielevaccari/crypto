@@ -23,6 +23,5 @@
 }
 
 .light {
-  background:
-  linear-gradient(rgba(71, 71, 71, 0.3),rgba(71, 71, 71, 0.3)),
+  background: slighten($color: $main-color, $amount: 20)
 }
