@@ -25,6 +25,8 @@
 
   .crypto-desktop-navbar-right {
     flex: 45%;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
