@@ -16,3 +16,18 @@ export interface ICryptoCoin {
     en: string
   },
 }
+
+export interface IMarketChartData {
+  readonly prices: [[
+    date: number,
+    price: number,
+  ]],
+  readonly market_caps: [[
+    date: number,
+    cap: number,
+  ]],
+  readonly total_volumes: [[
+    date: number,
+    volume: number,
+  ]],
+}

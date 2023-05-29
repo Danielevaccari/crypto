@@ -2,7 +2,7 @@ import axios, { AxiosResponse } from 'axios';
 import { PATH_TOP_100_CRYPTO } from '../../utils/constants';
 import { PATH_SPECIFIC_CRYPTO_DATA_BY_ID } from '../../utils/constants';
 import { ICoin } from '../../models/coin.interface';
-import { ICryptoCoin } from '../../interfaces/interfaces';
+import { ICryptoCoin, IMarketChartData } from '../../interfaces/interfaces';
 
 const instance = axios.create({
   baseURL: process.env.COINGECKO_API_URL,
@@ -25,6 +25,10 @@ export const CoinAPI = {
 
   getSpecificCoin(coinID: string): Promise<ICryptoCoin> {
     return requests.get(PATH_SPECIFIC_CRYPTO_DATA_BY_ID + coinID);
+  },
+
+  getMarketChart(coinID: string): Promise<IMarketChartData> {
+    return requests.get(PATH_SPECIFIC_CRYPTO_DATA_BY_ID + coinID + '/market_chart?vs_currency=eur&days=30');
   },
 };
 

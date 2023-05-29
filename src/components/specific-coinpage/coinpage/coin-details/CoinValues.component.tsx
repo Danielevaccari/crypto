@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { ICryptoCoin } from '../../../../interfaces/interfaces';
 import { CoinAPI } from '../../../../services/coingecko/coingeckoApi.service';
+import CoinChart from './CoinChart';
 
 const DOMPurify = require('dompurify')(window);
 
@@ -32,6 +33,7 @@ const CoinDetails: React.FC<Props> = ({ coinId }) => {
             {cryptoCoin?.market_data.current_price.eur}
           </div>
         </div>
+        <CoinChart coinId={coinId}></CoinChart>
         <div className='coinpage-coin-info' dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(cryptoCoin?.description['en']) }} />
       </div>
     </>
