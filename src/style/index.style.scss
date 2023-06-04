@@ -23,5 +23,5 @@
 }
 
 .light {
-  background: slighten($color: $main-color, $amount: 20)
+  background: lighten($color: $main-color, $amount: 20)
 }
