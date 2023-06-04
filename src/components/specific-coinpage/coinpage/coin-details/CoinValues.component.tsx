@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ICryptoCoin } from '../../../../interfaces/interfaces';
 import { CoinAPI } from '../../../../services/coingecko/coingeckoApi.service';
 
@@ -10,7 +10,7 @@ interface Props {
 
 const CoinDetails: React.FC<Props> = ({ coinId }) => {
   const [cryptoCoin, setCryptoCoin] = React.useState<ICryptoCoin>();
-  useEffect(() => {
+  React.useEffect(() => {
     if (coinId) {
       CoinAPI.getSpecificCoin(coinId).then((coin) => {
         setCryptoCoin(coin);

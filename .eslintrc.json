@@ -37,5 +37,13 @@
             "error",
             "always"
         ]
-    }
+    },
+    "react/prop-types": [
+        2,
+        {
+            "ignore": [
+                "children"
+            ]
+        }
+    ],
 }

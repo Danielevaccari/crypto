@@ -24,6 +24,10 @@
   text-rendering: geometricPrecision;
 }
 
+.light {
+  background: lighten($color: $main-color, $amount: 20)
+}
+
 html {  
   /* hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none;
