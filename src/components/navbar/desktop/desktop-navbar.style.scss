@@ -1,26 +1,27 @@
 .crypto-desktop-navbar-container {
-  height          : 70px;
   width           : 100vw;
+  height          : auto;
   background-color: $main-color;
   display         : flex;
-  border          : .5px solid;
-  border-color    : $border-color;
-  position        : fixed;
+  flex-flow       : row wrap;
+  justify-content : space-between;
+  border-color    : none;
+  color           : white;
+  align-items     : center;
+  padding         : 10px 20px 10px 20px;
 
   .crypto-desktop-navbar-left {
-    flex           : 10%;
-    display        : flex;
-    align-items    : center;
-    justify-content: center;
 
     .crypto-desktop-navbar-icon {
-      height: min(40px, 90%);
-      width : min(40px, 90%);
+      height      : 40px;
+      width       : 40px;
     }
+
   }
 
+  
+
   .crypto-desktop-navbar-middle {
-    flex: 45%;
   }
 
   .crypto-desktop-navbar-right {
@@ -29,11 +30,62 @@
     justify-content: flex-end;
     align-items: center;
     margin-right: 10px;
+    color: white;
   }
+}
+
+.crypto-desktop-register-button {
+  height: 2rem !important;
+  text-transform: none !important;
+  font-size: .9rem !important;
+  margin: 6px 12px 6px 12px !important;
+  border: 1px solid !important;
+  line-height: 1 !important;
+  font-weight: 400 !important;
+  background-color: #047bf8 !important;
+  border-color: #047bf8 !important;
+  font-family: 
+    Proxima,
+    Nova,
+    W01,
+    Roboto,
+    Rubik,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif !important;
+}
+
+.crypto-desktop-text-button {
+  text-transform: none !important;
+  font-size: .9rem !important;
+  padding: 6px 12px !important;
+  border: 0px !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+  color: white !important;
+  background-color: none !important;
+  border-color: none !important;
+  font-family: 
+    Proxima,
+    Nova,
+    W01,
+    Roboto,
+    Rubik,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif !important;
 }
 
 @media (max-width: $tablet) {
   .crypto-desktop-navbar-container {
-    display: none;
+    display: flex;
   }
 }

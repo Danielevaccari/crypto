@@ -6,17 +6,27 @@ import {
 import CryptoDisplay from './components/coins-data-display/CryptoDisplay.component';
 import Coinpage from './components/specific-coinpage/coinpage/Coinpage.component';
 import NavbarDesktop from './components/navbar/desktop/NavbarDesktop.component';
-import SidebarDesktop from './components/navbar/desktop/desktop-sidebar/SidebarDesktop.component';
+import MainpageInfobarDesktop from './components/navbar/desktop/desktop-mainpage-infobar/MainpageInfobarDesktop.component';
+import Stack from '@mui/material/Stack';
 
 const App: React.FC = () => {
   return (
     <>
-      <Router>
-        <NavbarDesktop />
-        <SidebarDesktop />
+      <Router>        
         <Routes>
-          <Route path='/' element={<CryptoDisplay />} />
-          <Route path='coins/:coinId' element={<Coinpage />} />
+          <Route path='/' element={
+            <Stack>
+              <NavbarDesktop />
+              <MainpageInfobarDesktop /> 
+              <CryptoDisplay />
+            </Stack>
+          } />
+          <Route path='coins/:coinId' element={
+            <Stack>              
+              <NavbarDesktop />
+              <Coinpage />
+            </Stack>
+          } />
         </Routes>
       </Router>
     </>

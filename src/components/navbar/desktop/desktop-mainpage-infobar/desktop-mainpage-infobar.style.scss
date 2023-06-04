@@ -1,0 +1,30 @@
+.crypto-desktop-mainpage-infobar-container {
+  display         : flex;
+  flex-flow       : row wrap;
+  justify-content : space-evenly;
+  padding         : 50px 30px 0px 30px;
+  align-items     : flex-start;
+  height          : 60vh;
+  width           : 100vw;
+  background      : linear-gradient(135deg, #171e2c 30%, #14636f 100%);
+  color           : white;
+
+  .crypto-desktop-mainpage-infobar-left {
+    width         : 40vw;
+
+    .crypto-desktop-mainpage-infobar-left-paragraph {
+      margin      : 50px 0px 50px 0px;
+    }
+  }
+
+  .crypto-desktop-mainpage-infobar-right {
+    display       : grid;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: $tablet) {
+  .crypto-desktop-mainpage-infobar-container {
+    display: flex;
+  }
+}
